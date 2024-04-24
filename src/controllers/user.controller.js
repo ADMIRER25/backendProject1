@@ -129,6 +129,8 @@ const loginUser = asyncHandler(async (req, res) => {
     user._id
   );
 
+  //todo: sir said that here in user refresh token will be empty but in user inside generateAccessAndRefreshTokens refresh token will be set we have to console it to see it
+  
   //6.send the tokens using secure cookies
   const loggedInUser = await User.findById(user._id).select(
     "-password -refreshToken"
